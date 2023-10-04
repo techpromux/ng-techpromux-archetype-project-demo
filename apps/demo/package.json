@@ -1,0 +1,10 @@
+{
+  "name": "@techpromux/demo",
+  "version": "0.0.1",
+  "private": false,
+  "devDependencies": {
+    "@capacitor/cli": "^5.4.0",
+    "@capacitor/ios": "../../node_modules/@capacitor/ios",
+    "@capacitor/android": "../../node_modules/@capacitor/android"
+  }
+}

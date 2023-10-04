@@ -1,0 +1,18 @@
+<techpromux-ui-page-box>
+  <techpromux-ui-navbar-box>
+    <button cButton color="light" [active]="true" (click)="goToAdd()">
+      <svg cIcon class="me-2" name="cil-spreadsheet"></svg> Add Book
+    </button>
+  </techpromux-ui-navbar-box>
+
+  <techpromux-ui-panel-box [customClasses]="'table-responsive'">
+    <app-demo-ui-books-table
+      [pagedDataSettings]="pagedData"
+      (paged)="onPage($event)"
+      (sorted)="onSort($event)"
+      (selected)="onSelect($event)"
+      (init)="registerChild('books-table', $event)"
+    >
+    </app-demo-ui-books-table>
+  </techpromux-ui-panel-box>
+</techpromux-ui-page-box>

@@ -1,0 +1,36 @@
+<techpromux-ui-navbar-box [customClasses]="'d-flex justify-content-start'">
+  <p class="mb-0">DATES DEMOS!!!</p>
+</techpromux-ui-navbar-box>
+
+<!--
+  ---------------------------------------------------------------------------------------------
+-->
+
+<hr />
+
+<techpromux-ui-panel-box>
+  <div class="form-group col-xs-12 col-sm-4">
+    <div class="form-group">
+      <label class="">Date</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="DD/MM/YYYY"
+        class="form-control"
+        bsDatepicker
+        [bsValue]="dateValue"
+        [bsConfig]="{
+          isAnimated: true,
+          dateInputFormat: 'DD/MM/YYYY',
+          containerClass: 'theme-blue'
+        }"
+      />
+    </div>
+  </div>
+</techpromux-ui-panel-box>
+
+<!--
+  ---------------------------------------------------------------------------------------------
+-->
+
+<hr />

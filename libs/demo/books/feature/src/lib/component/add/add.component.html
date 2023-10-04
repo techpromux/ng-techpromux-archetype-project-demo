@@ -1,0 +1,93 @@
+<techpromux-ui-page-box>
+  <techpromux-ui-navbar-box>
+    <!-- OUT -->
+
+    <button
+      cButton
+      (click)="executeAction_Exit()"
+      color="secondary"
+      variant="outline"
+      class="ms-1 me-1"
+      style="min-width: 100px"
+    >
+      <svg cIcon name="cil-list" width="16"></svg>
+      {{ 'base.actions.button.toList' | translate }}
+    </button>
+
+    <!-- PREVIOUS -->
+
+    <button
+      cButton
+      *ngIf="currentStep === 'step2'"
+      (click)="executeAction_Previous()"
+      color="secondary"
+      variant="outline"
+      class="ms-1 me-1"
+      style="min-width: 100px"
+    >
+      <svg cIcon name="cil-arrow-thick-left" width="16"></svg>
+      {{ 'base.actions.button.back' | translate }}
+    </button>
+
+    <!-- NEXT -->
+
+    <button
+      cButton
+      *ngIf="currentStep === 'step1'"
+      (click)="executeAction_Next()"
+      [active]="!isDisabledBtn_Next() && isFormGroupValid()"
+      color="primary"
+      variant="outline"
+      class="ms-1 me-1"
+      style="min-width: 100px"
+    >
+      <svg cIcon name="cil-calendar-check" width="16"></svg>
+      {{ 'base.actions.button.confirm' | translate }}
+    </button>
+
+    <!-- END -->
+
+    <button
+      cButton
+      *ngIf="currentStep === 'step2'"
+      (click)="executeAction_End()"
+      [active]="true"
+      color="primary"
+      variant="outline"
+      class="ms-1 me-1"
+      style="min-width: 100px"
+    >
+      <svg cIcon name="cil-save" width="16"></svg>
+      {{ 'base.actions.button.save' | translate }}
+    </button>
+  </techpromux-ui-navbar-box>
+
+  <techpromux-ui-panel-box *ngIf="formIsVisible">
+    <div class="row">
+      <app-demo-ui-book-form
+        [editable]="formIsEditable"
+        (formGroupCreated)="onFormGroupCreated($event)"
+      >
+      </app-demo-ui-book-form>
+    </div>
+  </techpromux-ui-panel-box>
+
+  <techpromux-ui-panel-box *ngIf="!formIsVisible">
+    DATA SAVED SUCCESSFULLY
+  </techpromux-ui-panel-box>
+
+  <techpromux-ui-navbar-box *ngIf="formIsVisible">
+    <button
+      class="btn btn-outline-success me-2"
+      (click)="onClickFormEnabledDisabled(true)"
+    >
+      FORM ENABLED
+    </button>
+    <button
+      class="btn btn-outline-danger me-2"
+      (click)="onClickFormEnabledDisabled(false)"
+    >
+      FORM DISABLED
+    </button>
+  </techpromux-ui-navbar-box>
+</techpromux-ui-page-box>
