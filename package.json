@@ -87,7 +87,6 @@
     "underscore": "^1.13.6",
     "util": "^0.12.5",
     "uuid": "^9.0.1",
-    "val-loader": "^5.0.1",
     "zone.js": "^0.13.3"
   },
   "devDependencies": {

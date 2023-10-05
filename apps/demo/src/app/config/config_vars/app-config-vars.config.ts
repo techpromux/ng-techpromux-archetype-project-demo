@@ -5,11 +5,11 @@ import { IAppConfigVarsModel } from '@apps/demo-base-api';
 import { DotEnvVarsParserService } from '@ng-techpromux-archetype-project/core-util';
 import { environment } from '../../../environments/environment';
 
-import * as dotEnvVarsToken from '!val-loader!./dotenv-loader';
+const dotEnvVarsToken = process.env['NX_APP_ENV_VARS_TOKEN'];
 
 export const APP_CONFIG_VARS: IAppConfigVarsModel =
   DotEnvVarsParserService.getVars<IAppConfigVarsModel>(
-    dotEnvVarsToken,
+    dotEnvVarsToken as string,
     'demo',
     environment.name === '' ? 'dev' : environment.name
   );
