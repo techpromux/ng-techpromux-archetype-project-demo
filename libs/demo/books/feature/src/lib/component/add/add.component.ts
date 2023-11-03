@@ -10,12 +10,12 @@ import {
   inject,
 } from '@angular/core';
 import { FormArray, FormGroup } from '@angular/forms';
+import { BooksDomainFacadeService } from '@apps/demo-books-domain';
 import {
   AbstractDomainFacadeService,
   AbstractWizardFormFeatureComponent,
 } from '@ng-techpromux-archetype-project/core-ddd';
 import { ElementsResizeObserverService } from '@ng-techpromux-archetype-project/core-ui';
-import { BooksDomainFacadeService } from '@apps/demo-books-domain';
 import { Observable, of, take } from 'rxjs';
 
 @Component({
@@ -285,6 +285,12 @@ export class AddComponent
     }
 
     this.logger.console.log(this.__classname, 'formGroup', this.formGroup);
+
+    this.logger.console.log(
+      this.__classname,
+      'getRawValue',
+      this.formGroup.getRawValue()
+    );
 
     this.logger.console.log(
       this.__classname,

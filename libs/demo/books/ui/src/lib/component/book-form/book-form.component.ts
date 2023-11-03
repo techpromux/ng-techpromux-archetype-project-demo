@@ -213,6 +213,10 @@ export class AddEditFormComponent
         ],
         value: 'option-1',
         disabled: !editable,
+        additional:{
+          use_ng_select : true,
+          use_ng_select__multiple : true,
+        },
         relations: [
           {
             match: MATCH_DISABLED,
